@@ -1,0 +1,50 @@
+name: fruit_hub
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: ^3.5.4
+dependencies:
+  flutter_localizations:
+    sdk: flutter
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.17
+  flutter_easyloading: ^3.0.5
+  bot_toast: ^4.1.3
+  lottie: ^3.2.0
+  intl_utils: ^2.8.10
+  dots_indicator: ^4.0.1
+  flutter_screenutil: ^5.9.3
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/icons/crying.json
+    - assets/icons/smile.json
+    - assets/images/app_logo.svg
+    - assets/images/on_boarding_center1.svg
+    - assets/images/on_boarding_center2.svg
+    - assets/images/on_boarding_top1.svg
+    - assets/images/on_boarding_top2.svg
+    - assets/images/splash_bottom.svg
+    - assets/images/splash_top.svg
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Cairo-Medium.ttf
+          weight: 400
+        - asset: assets/fonts/Cairo-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+
+flutter_intl:
+  enabled: true
