@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/features/auth/presention/views/login_view.dart';
+import 'package:fruit_hub/features/auth/presention/views/signup_view.dart';
 import 'package:fruit_hub/features/on_boarding/presntion/views/on_boarding_view.dart';
 
 
@@ -19,6 +21,20 @@ class AppRouter {
         {
           return MaterialPageRoute(
             builder: (context) => const OnBoardingView(),
+            settings: settings,
+          );
+        }
+      case PageRoutesName.loginView:
+        {
+          return MaterialPageRoute(
+            builder: (context) => const LoginView(),
+            settings: settings,
+          );
+        }
+      case PageRoutesName.signUpView:
+        {
+          return MaterialPageRoute(
+            builder: (context) => const SignupView(),
             settings: settings,
           );
         }

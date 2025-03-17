@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import '../../../../../core/theme/color_palette.dart';
+
+class CustomCheckBox extends StatelessWidget {
+  const CustomCheckBox(
+      {super.key, required this.isChecked, required this.onChecked});
+  final bool isChecked;
+  final ValueChanged<bool> onChecked;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        onChecked(!isChecked);
+      },
+      child: AnimatedContainer(
+        width: 24.w,
+        height: 24.h,
+        duration: const Duration(milliseconds: 100),
+        decoration: ShapeDecoration(
+          color: isChecked ? AppColors.greenColor : Colors.white,
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+              width: 1.50,
+              color: isChecked ? Colors.transparent : const Color(0xFFDCDEDE),
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+        child: isChecked
+            ? Padding(
+          padding: const EdgeInsets.all(2),
+          child: SvgPicture.asset(
+            'assets/icons/Checkbox.svg',
+          ),
+        )
+            : const SizedBox(),
+      ),
+    );
+  }
+}

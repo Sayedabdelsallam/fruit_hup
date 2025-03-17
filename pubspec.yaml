@@ -17,6 +17,7 @@ dependencies:
   intl_utils: ^2.8.10
   dots_indicator: ^4.0.1
   flutter_screenutil: ^5.9.3
+  shared_preferences: ^2.5.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -25,15 +26,9 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
-    - assets/icons/crying.json
-    - assets/icons/smile.json
-    - assets/images/app_logo.svg
-    - assets/images/on_boarding_center1.svg
-    - assets/images/on_boarding_center2.svg
-    - assets/images/on_boarding_top1.svg
-    - assets/images/on_boarding_top2.svg
-    - assets/images/splash_bottom.svg
-    - assets/images/splash_top.svg
+    - assets/icons/
+    - assets/icons/Checkbox.svg
+    - assets/images/
   fonts:
     - family: Cairo
       fonts:

@@ -8,13 +8,5 @@ class AssetsRes {
 
   static const String PLUGIN_NAME = 'fruit_hub';
   static const String PLUGIN_VERSION = '1.0.0+1';
-  static const String CRYING = 'assets/icons/crying.json';
-  static const String SMILE = 'assets/icons/smile.json';
-  static const String APP_LOGO = 'assets/images/app_logo.svg';
-  static const String ON_BOARDING_CENTER1 = 'assets/images/on_boarding_center1.svg';
-  static const String ON_BOARDING_CENTER2 = 'assets/images/on_boarding_center2.svg';
-  static const String ON_BOARDING_TOP1 = 'assets/images/on_boarding_top1.svg';
-  static const String ON_BOARDING_TOP2 = 'assets/images/on_boarding_top2.svg';
-  static const String SPLASH_BOTTOM = 'assets/images/splash_bottom.svg';
-  static const String SPLASH_TOP = 'assets/images/splash_top.svg';
+  static const String CHECKBOX = 'assets/icons/Checkbox.svg';
 }
