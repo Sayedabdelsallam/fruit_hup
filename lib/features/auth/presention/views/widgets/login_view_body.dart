@@ -39,7 +39,10 @@ class LoginViewBody extends StatelessWidget {
           ),
           16.spaceVertical,
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              navigatorKey.currentState
+                  ?.pushNamed(PageRoutesName.forgotPasswordView);
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -60,8 +63,7 @@ class LoginViewBody extends StatelessWidget {
           33.spaceVertical,
           // => Create account
           DontHaveAccWidget(
-            onTap: ()
-            {
+            onTap: () {
               navigatorKey.currentState?.pushNamed(PageRoutesName.signUpView);
             },
             title: 'لا تملك حساب؟',
@@ -69,7 +71,7 @@ class LoginViewBody extends StatelessWidget {
           ),
           33.spaceVertical,
           OrRow(
-            title : 'أو',
+            title: 'أو',
           ),
           16.spaceVertical,
           // => google login
@@ -112,7 +114,3 @@ class LoginViewBody extends StatelessWidget {
     ).setHorizontalPadding(context, 0.04);
   }
 }
-
-
-
-
