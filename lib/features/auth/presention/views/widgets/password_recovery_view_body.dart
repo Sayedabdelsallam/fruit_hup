@@ -8,7 +8,6 @@ import 'package:fruit_hub/core/theme/app_text_styles.dart';
 import 'package:fruit_hub/core/theme/color_palette.dart';
 import 'package:fruit_hub/core/widgets/custom_button.dart';
 import 'package:fruit_hub/features/auth/presention/views/widgets/dont_have_acc_widget.dart';
-import 'package:fruit_hub/features/auth/presention/views/widgets/login_view_body.dart';
 import 'package:fruit_hub/main.dart';
 
 class PasswordRecoveryViewBody extends StatefulWidget {
