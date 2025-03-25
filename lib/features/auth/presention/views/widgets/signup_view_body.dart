@@ -8,6 +8,7 @@ import 'package:fruit_hub/features/auth/presention/cubits/signup_cubit/signup_cu
 import 'package:fruit_hub/features/auth/presention/views/widgets/dont_have_acc_widget.dart';
 import 'package:fruit_hub/features/auth/presention/views/widgets/terms_and_conditions.dart';
 import '../../../../../core/routs/page_routes_name.dart';
+import '../../../../../core/widgets/password_field.dart';
 
 class SignupViewBody extends StatefulWidget {
   const SignupViewBody({super.key});
@@ -21,6 +22,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
 
   late String email, password, name;
+  late bool isTermsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -43,27 +45,32 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               keyboardType: TextInputType.emailAddress,
             ),
             16.spaceVertical,
-            CustomFormField(
+            PasswordField(
               onSaved: (value) => password = value!,
-              hintText: 'كلمة المرور',
-              keyboardType: TextInputType.visiblePassword,
-              suffixIcon: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.remove_red_eye_outlined,
-                  color: Color(0xFFC9CECF),
-                ),
-              ),
             ),
             16.spaceVertical,
-            TermsAndConditions(),
+            TermsAndConditions(
+              onChecked: (value) {
+                setState(() {
+                  isTermsAccepted = value;
+                });
+              },
+            ),
             30.spaceVertical,
             CustomButton(
               onPressed: () {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState?.save();
-                  context.read<SignupCubit>().createUserWithEmailAndPassword(
-                      email: email, password: password, name: name);
+                 if (isTermsAccepted) {
+                    context.read<SignupCubit>().createUserWithEmailAndPassword(
+                        email: email, password: password, name: name);
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('يرجى قبول الشروط والأحكام'),
+                      ),
+                    );
+                  }
                 } else {
                   setState(() {
                     _autovalidateMode = AutovalidateMode.always;

@@ -6,7 +6,7 @@ class SnackBarServices {
   static void showSuccessMessage(String msg) {
     BotToast.showCustomNotification(
       toastBuilder: (void Function() cancelFunc) => _buildCustomToast(
-        msg: msg,
+        msg: msg ,
         color: Colors.green,
         animationAsset: 'assets/icons/smile.json', // Path to your Lottie animation file
       ),

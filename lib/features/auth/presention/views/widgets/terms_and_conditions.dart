@@ -6,7 +6,9 @@ import '../../../../../core/theme/color_palette.dart';
 import 'custom_check_box.dart';
 
 class TermsAndConditions extends StatefulWidget {
-  const TermsAndConditions({super.key});
+  const TermsAndConditions({super.key, required this.onChecked});
+
+  final ValueChanged<bool> onChecked;
 
   @override
   State<TermsAndConditions> createState() => _TermsAndConditionsState();
@@ -25,6 +27,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
           onChecked: (value) {
             setState(() {
               isTermsAccepted = value;
+              widget.onChecked(value);
             });
           },
         ),

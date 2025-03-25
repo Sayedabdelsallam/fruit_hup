@@ -5,7 +5,6 @@ import 'package:fruit_hub/core/services/snack_bar_services.dart';
 import 'package:fruit_hub/features/auth/presention/cubits/signup_cubit/signup_cubit.dart';
 import 'package:fruit_hub/features/auth/presention/views/widgets/signup_view_body.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-
 import '../../../../../core/routs/page_routes_name.dart';
 
 class SignupViewBodyBlocConsumer extends StatelessWidget {
@@ -20,7 +19,9 @@ class SignupViewBodyBlocConsumer extends StatelessWidget {
         if (state is SignupSuccess) {
           Navigator.pushNamed(context, PageRoutesName.loginView);
         } else if (state is SignupFailure) {
-          SnackBarServices.showErrorMessage(state.message);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(state.message)),
+          );
         }
       },
       builder: (context, state) {
